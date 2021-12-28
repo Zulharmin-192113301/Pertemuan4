@@ -6,52 +6,45 @@ import './App.css';
 class App extends Component {
 
   render() {
-    var ktp = {
-      nama : 'yanto',
-      nik : '1920121213134',
-      tinggal : 'medan'
-    }
-  
-  
+    var infoumur = [
+      {nama:'Budi',umur:54},
+      {nama:'Doni',umur:23},
+      {nama:'Yanto',umur:41},
+      {nama:'Desi',umur:30}
+    ]
     
   return (
-    <table>
-      <tr>
-        <td>
-          Nik
-        </td>
-        <td>
-          :
-        </td>
-        <td>
-          {ktp.nik}
-        </td>
-      </tr>
+    <table border='2'>
+      <thead>
+        <tr>
+          <th>
+            No.
+          </th>
+          <th>
+            Nama
+          </th>
+          <th>
+            Umur
+          </th>
+        </tr>
+      </thead>
+      <tbody>
 
-      <tr>
-        <td>
-          Nama
-        </td>
-        <td>
-          :
-        </td>
-        <td>
-          {ktp.nama}
-        </td>
-      </tr>
+        {infoumur.map((item,index) =>(
+          <tr key={index}>
+            <td>
+              {index +1}
+            </td>
+            <td>
+              {item.nama}
+            </td>
+            <td>
+              {item.umur}
+            </td>
+          </tr>
+        ))}
 
-      <tr>
-        <td>
-          Tempat Tinggal
-        </td>
-        <td>
-          :
-        </td>
-        <td>
-          {ktp.tinggal}
-        </td>
-      </tr>
-
+      </tbody>
     </table>
   )
 }
