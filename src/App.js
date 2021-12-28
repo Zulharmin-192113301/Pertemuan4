@@ -28,7 +28,14 @@ class App extends Component {
       info : data_tmp
     })
   }
-  
+
+  deleteData(index) {
+    var data_tmp = this.state.info;
+    data_tmp.splice(index,1);
+    this.setState ({
+      info : data_tmp
+    })
+  }
 
   render() {
    
@@ -48,7 +55,7 @@ class App extends Component {
 
         <div className='form-group'>
           <label>Nilai:</label>
-          <input type='number' name='nilai' value={this.state.nilai} onChange={this.setvalueState.bind(this)} className='form-control' />
+          <input type='text' name='nilai' value={this.state.nilai} onChange={this.setvalueState.bind(this)} className='form-control' />
         </div>
 
         <button onClick={this.addData.bind(this)} type='button' className='btn btn-success'> Masukkan</button>
@@ -72,6 +79,10 @@ class App extends Component {
             <th>
               Nilai
             </th>
+            <th>
+              #
+            </th>
+            
           </tr>
         </thead>
 
@@ -89,6 +100,9 @@ class App extends Component {
                 </td>
                 <td>
                   {info.nilai}
+                </td>
+                <td>
+                <button onClick={this.deleteData.bind(this)} type='button' className='btn btn-danger'>Hapus</button>
                 </td>
               </tr>
             ))}
