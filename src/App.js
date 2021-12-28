@@ -1,62 +1,43 @@
+//App.js
+
 import React, { Component } from 'react';
-import './App.css'; //import file css
-import logo from './logo.svg'; //import file image logo.sgv
-import jersey1 from './img/jersey-chealsea-home.png';
-import jersey2 from './img/jersey-chealsea-away.png';
-import jersey3 from './img/jersey-chealsea-thrid.png';
+import './App.css';
 
 class App extends Component {
 
   render() {
-    var h1 = <i>Lannister</i>;
-    const title = "Toko Online";
-    this.namaclub = "Chealsea";
- 
+    var angka = [1,2,3];
+    var nama = ['andi', 'budi', 'tono'];
+    var campuran = ['andi',1,'budi',2,'tono',3];
+  
+  
+    
   return (
-      <div className="content">
-        <img className="logo" src={logo} />
-          <h1 style={{textAlign: 'center', color: 'rgb(252, 146, 158)'}}>
-            Hello, {h1}
-         </h1>
-        <h2 className="title">{title}</h2>
+    <div>
+      Isi array angka
+      <ul>
+        {angka.map((item, index)=>(
+        <li>
+          Index ke -{index} : {item}
+        </li> ))}
+      </ul>
 
-        <div class="row">
-         <div class="column">
-          <img className="jersey" src={jersey1} /> </div>
-         <div class="column">
-          <img className="jersey" src={jersey2} /> </div>
-        <div class="column">
-          <img className="jersey" src={jersey3} /></div>
-      </div>
+      <ul>
+        {nama.map((item, index)=>(
+        <li>
+          Index ke -{index} : {item}
+        </li> ))}
+      </ul>
 
-      <div class="row">
-         <div class="column">
-         <p className="namaproduk"> {this.namaclub} Home </p>
-         </div>
-         <div class="column">
-         <p className="namaproduk"> {this.namaclub} Away </p>
-         </div>
-        <div class="column">
-        <p className="namaproduk"> {this.namaclub} Thrid Kit</p>
-        </div>
-      </div>
-
-      <div class="row">
-         <div class="column">
-         <p className="hargaproduk"> Rp. 500.000 </p>
-         </div>
-         <div class="column">
-         <p className="hargaproduk"> Rp. 450.000 </p>
-         </div>
-        <div class="column">
-        <p className="hargaproduk"> Rp. 450.000 </p>
-        </div>
-      </div>
-
-
+      <ul>
+        {campuran.map((item, index)=>(
+        <li>
+          Index ke -{index} : {item}
+        </li> ))}
+      </ul>
     </div>
- 
-   );
-  }
+  )
 }
+}
+
 export default App;
