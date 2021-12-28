@@ -6,38 +6,58 @@ import './App.css';
 class App extends Component {
 
   render() {
-    var angka = [1,2,3];
-    var nama = ['andi', 'budi', 'tono'];
-    var campuran = ['andi',1,'budi',2,'tono',3];
+    var ktp = {
+      nama : 'yanto',
+      nik : '1920121213134',
+      tinggal : 'medan'
+    }
   
   
     
   return (
-    <div>
-      Isi array angka
-      <ul>
-        {angka.map((item, index)=>(
-        <li>
-          Index ke -{index} : {item}
-        </li> ))}
-      </ul>
+    <table>
+      <tr>
+        <td>
+          Nik
+        </td>
+        <td>
+          :
+        </td>
+        <td>
+          {ktp.nik}
+        </td>
+      </tr>
 
-      <ul>
-        {nama.map((item, index)=>(
-        <li>
-          Index ke -{index} : {item}
-        </li> ))}
-      </ul>
+      <tr>
+        <td>
+          Nama
+        </td>
+        <td>
+          :
+        </td>
+        <td>
+          {ktp.nama}
+        </td>
+      </tr>
 
-      <ul>
-        {campuran.map((item, index)=>(
-        <li>
-          Index ke -{index} : {item}
-        </li> ))}
-      </ul>
-    </div>
+      <tr>
+        <td>
+          Tempat Tinggal
+        </td>
+        <td>
+          :
+        </td>
+        <td>
+          {ktp.tinggal}
+        </td>
+      </tr>
+
+    </table>
   )
 }
 }
+
+
+
 
 export default App;
